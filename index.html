@@ -684,6 +684,15 @@
         <script src="assets/js/app.js"></script>
         <!--Hamburger menu JS-->
         <script>
+            var password = "tutorial";
+            (function passcodeprotect() {
+            var passcode = prompt("Enter Password.");
+            while (passcode !== password) {
+               alert("Incorrect Password.");
+               return passcodeprotect();
+            }
+             }());
+             alert('Welcome to my website!');
             // nav hamburger selections
             const burger = document.querySelector("#burger-menu");
             const ul = document.querySelector("nav ul");
