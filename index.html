@@ -320,21 +320,58 @@
             line-height: var(--line-height);
             padding: 0.4rem;
         }
-
         .skills {
-            max-width: 68.75rem;
-            margin: auto;
-            text-align: center;
-            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #f5f5f5;
         }
 
         .skill-header {
-            margin-bottom: 1rem;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .skills-wrapper img svg path {
-            padding: 1.25rem;
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
         }
+
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
 
         .icon {
             width: 11.875rem;
@@ -522,17 +559,17 @@
           </div>
         <!--Hero Section-->
         <section class="hero" id="homet">
-            <img src="https://media.licdn.com/dms/image/D4E03AQGtRxxA18DEvQ/profile-displayphoto-shrink_800_800/0/1693424743954?e=1709769600&v=beta&t=8VB4JRQK1G004UTfQkx1WRP6MJb2RdHB9e5s9NAgb3U" loading="lazy" class="hero-img" />
+            <img src="https://media.licdn.com/dms/image/D4E03AQGtRxxA18DEvQ/profile-displayphoto-shrink_800_800/0/1693424743954?e=1727913600&v=beta&t=SIwfGGcysyQINZ9YFYC_cw0gtPguuMMJnAo9I3-qDJA" loading="lazy" class="hero-img" />
             <div class="bio animate__animated animate__pulse">
                 <h2 class="bio-title">About Me</h2>
                 <p class="bio-text">
                     Savrina is a masters student studying Bioinformatics at the Georgia Institute of Technology.
-                    Her heart lies in research and improving the quality of life for people worldwide through healthcare innovation.
+                    She is passionate about using data-driven insights and artifical intelligence technologies to improve quality of life for people worldwide.
                 </p>
             </div>
         </section>
         <!--More About-->
-        <section class="more-about" id="about">
+        <!-- <section class="more-about" id="about">
             <h2>More About Me</h2>
             <p>
                 <br>My seed of purpose was planted from a young age, when my heart was captivated by the field of healthcare and the transformative power of medical advancements.
@@ -547,54 +584,89 @@
                 I dream of a world where healthcare is accessible, transformative, and there are no bounds to quality of life.
                 My story continues, and my dedication to healthcare and research will leave a mark on the world, one life at a time.
             </p>
-        </section>
+        </section> -->
         <!--Skills Section-->
         <section class="skills" id="skills">
             <h2 class="skill-header">Technical Skills</h2>
             <div class="skills-wrapper">
-                <!-- <div class="first-set animate__animated animate__pulse">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-html skills" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5Zm-9.736 7.35v3.999h-.791v-1.714H1.79v1.714H1V11.85h.791v1.626h1.682V11.85h.79Zm2.251.662v3.337h-.794v-3.337H4.588v-.662h3.064v.662H6.515Zm2.176 3.337v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596H9.93L8.79 11.85h-.805v3.999h.706Zm4.71-.674h1.696v.674H12.61V11.85h.79v3.325Z"/>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-css skills" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.397 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495ZM6.78 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1 1 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.527-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.5.41.12.17.187.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.184.384c0 .121.047.22.143.3a.97.97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Z"/>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-js skills" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2H8v-1h4a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.186 15.29a1.176 1.176 0 0 1-.111-.449h.765a.578.578 0 0 0 .255.384c.07.049.153.087.249.114.095.028.202.041.319.041.164 0 .302-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.255-.144-.462-.193l-.619-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.528-.422.224-.1.483-.149.776-.149.305 0 .564.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.247-.181.923.923 0 0 0-.369-.068c-.217 0-.388.05-.513.152a.472.472 0 0 0-.184.384c0 .121.048.22.143.3a.97.97 0 0 0 .405.175l.62.143c.218.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033A1.32 1.32 0 0 1 0 14.791h.765a.576.576 0 0 0 .073.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.092-.11.138-.265.138-.466v-2.745h.79v2.725c0 .44-.119.774-.357 1.005-.236.23-.564.345-.984.345a1.59 1.59 0 0 1-.569-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.243-.39Z"/>
-                      </svg>
+                <div class="skill-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBJBwDlNrMq5Wj_l-vGaNPgVONr-Zvoh_kZQ&s" alt="Python Icon">
+                    <p>Python</p>
                 </div>
-                <div class="second-set animate__animated animate__pulse">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48" class="skills">
-                        <path fill="#e64a19" d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"></path><path fill="#7c4dff" d="M25,31h-7c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7V31z"></path><path fill="#66bb6a" d="M18,45L18,45c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7v7C25,41.866,21.866,45,18,45z"></path><path fill="#ff7043" d="M32,17h-7V3h7c3.866,0,7,3.134,7,7v0C39,13.866,35.866,17,32,17z"></path><circle cx="32" cy="24" r="7" fill="#29b6f6"></circle>
-                    </svg>
-                    <img class="skills" width="48" height="48" src="https://img.icons8.com/color/48/laboratory.png" alt="laboratory"/>
-                    <img class="skills" width="64" height="64" src="https://img.icons8.com/dusk/64/presentation--v1.png" alt="presentation--v1"/>
-                </div> -->
-                <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>Bash for Scripting and Command Line</li>
-                    <li>SQL</li>
-                    <li>Excel VBA</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Microsoft Suite</li>
-                    <li>Figma</li>
-                </ul>
+                <div class="skill-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2tEi3labYWSv9nHowb8JXue6pOLMtGsCwA&s" alt="Java Icon">
+                    <p>Java</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFDJLaUHfkk5JOqF2RTfK4m3RgHi3kM7Txw&s" alt="Bash Icon">
+                    <p>Bash</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Icon">
+                    <p>SQL</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://st5.depositphotos.com/71826130/66577/i/450/depositphotos_665775976-stock-photo-configuration-gear-line-icon-website.jpg" alt="CSS Icon">
+                    <p>Machine Learning</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10644/10644640.png" alt="JavaScript Icon">
+                    <p>Artificial Intelligence</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://dv-website.s3.amazonaws.com/uploads/2018/01/shutterstock_141489301.jpg" alt="Microsoft Suite Icon">
+                    <p>Cloud Computing</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://nexwebsites.com/images/blog/api.png" alt="Figma Icon">
+                    <p>API Integration</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://policyviz.com/wp-content/uploads/2016/10/Excel-VBA.jpg" alt="Excel VBA Icon">
+                    <p>Excel VBA</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="HTML Icon">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Icon">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.sanity.io/images/3do82whm/next/a69e3ba2441d35dd1a7945e826064708f30c10a9-1000x667.jpg?w=720&h=480&fit=clip&auto=format" alt="JavaScript Icon">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/02/Microsoft-Office-365-Logo.png" alt="Microsoft Suite Icon">
+                    <p>Microsoft Suite</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma Icon">
+                    <p>Figma</p>
+                </div>
             </div>
         </section>
+        
         <!--Projects Section-->
         <section class="projects" id="projects">
-            <h2 class="projects-title">Projects and Research</h2>
+            <h2 class="projects-title">Experience, Research, and Projects</h2>
             <div class="projects-container">
                 <div class="project-container project-card">
-                    <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/302480868_543342677593124_4594355407194410067_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=pgqYiXJgZAwAX_cZfBN&_nc_ht=scontent-iad3-2.xx&oh=00_AfBpR5f9kBWmdsx5EuNzW7_2NmFCiSqyzL_oYIMqWNddow&oe=659C8BC0" alt="AMIR Group ML" loading="lazy" class="project-pic" />
+                    <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/ff7p0riaxujbeecqy6hu" alt="research" loading="lazy" class="project-pic" />
+                    <h3 class="project-title">Elevance Health Data Analytics and Automation Internship</h3>
+                    <p class="project-details">
+                        Engineering AI solutions to improve and streamline the health insurance claims process. Leveraging LLMs, RAG models, dynamic prompting, data analytics, and machine learning to build an internal application and increase claims processing productivity.
+                    </p>
+                    <a href="https://www.elevancehealth.com/" target="_blank" class="project-link"><strong>Company Homepage!</strong></a>
+                </div>
+                <div class="project-container project-card">
+                    <img src="https://pbs.twimg.com/profile_images/1583145163618148353/mDBUEXGI_400x400.jpg" alt="AMIR Group ML" loading="lazy" class="project-pic" />
                     <h3 class="project-title">Machine Learning Research</h3>
                     <p class="project-details">
-                        I am a member of the AMIR Group at Georgia Tech. We focus on foundational machine learning for scientific discovery. More info to come!
+                        Graduate research assistant utilizing machine learning to further research in avian vocal recognition. GT MS Bioinformatics Fellow Fall 2024.
                     </p>
-                    <a href="https://amirmohan.github.io/" target="_blank" class="project-link"><strong>Group Homepage</strong></a>
+                    <a href="https://amirmohan.github.io/" target="_blank" class="project-link"><strong>Group Homepage!</strong></a>
                 </div>
                 <div class="project-container project-card">
                     <img src="https://robertcurrylab.com/wp-content/uploads/2020/08/cropped-CurryLab-logo-homepage-e1596919807369.png" alt="ornithology research" loading="lazy" class="project-pic" />
@@ -602,17 +674,36 @@
                     <p class="project-details">
                         During my 3.5 years at Villanova University, I served as an undergraduate researcher, completing my own independent research project. I have presented at several internationally-recognized ornithology conferences and am in the publication process for my project.
                     </p>
-                    <a href="https://robertcurrylab.com/" target="_blank" class="project-link"><strong>Lab Homepage</strong></a>
+                    <a href="https://robertcurrylab.com/" target="_blank" class="project-link"><strong>Lab Homepage!</strong></a>
                 </div>
                 <!-- MAKE EDIT HERE -->
+            </div>
+            <div class="projects-container">
                 <div class="project-container project-card">
-                    <img src="https://p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-details.png" alt="html css javascript" loading="lazy" class="project-pic" />
-                    <h3 class="project-title">Use CSS and JS to Play with Variables</h3>
+                    <img src="https://www.cdc.gov/nutrition/images/strategies-guidlines/nutrition-facts-600x300-1.jpg?_=65697" alt="research" loading="lazy" class="project-pic" />
+                    <h3 class="project-title">Recipe Recommendation System</h3>
                     <p class="project-details">
-                        Following Wes Bos's 30 Days of JavaScript course, I worked on connecting HTML, CSS, and JavaScript principles to create a responsive photo viewer. Users can modify spacing, blur, and base color as they please.
+                        Utilized Python, TF-IDF algorithm, JavaScript, HTML, and CSS to develop a Flask-based web application for a recipe recommendation system that takes in user input and generates custom recipes.
                     </p>
-                    <a href="CSSandJS.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
+                    <a href="http://bit.ly/my-personal-recipes" target="_blank" class="project-link"><strong>Use the App!</strong></a>
                 </div>
+                <div class="project-container project-card">
+                    <img src="https://blogs.microsoft.com/wp-content/uploads/prod/2012/08/8867.Microsoft_5F00_Logo_2D00_for_2D00_screen.jpg" alt="AMIR Group ML" loading="lazy" class="project-pic" />
+                    <h3 class="project-title">Microsoft Pro-Bono Project</h3>
+                    <p class="project-details">
+                        Designed and implemented an Excel VBA add-in and custom macro to streamline the pricing request process for Microsoft finance.
+                    </p>
+                    <!-- <a href="https://amirmohan.github.io/" target="_blank" class="project-link"><strong>Group Homepage</strong></a> -->
+                </div>
+                <div class="project-container project-card">
+                    <img src="https://images.theconversation.com/files/578175/original/file-20240227-28-cejldv.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C7668%2C3828&q=45&auto=format&w=1356&h=668&fit=crop" alt="ornithology research" loading="lazy" class="project-pic" />
+                    <h3 class="project-title">Airline Management System</h3>
+                    <p class="project-details">
+                        Built an airline management system in MySQL to track airline, airplane, and passenger data.
+                    </p>
+                    <!-- <a href="https://robertcurrylab.com/" target="_blank" class="project-link"><strong>Lab Homepage</strong></a> -->
+                </div>
+                <!-- MAKE EDIT HERE -->
             </div>
             <div class="projects-container">
                 <div class="project-container project-card">
@@ -621,15 +712,7 @@
                     <p class="project-details">
                         As an avid puzzle player, I am absolutely obsessedddd with tactful games such as Wordle, Sudoku, Connections, jigsaw puzzles in general, and more! So, naturally, I ~had~ to learn to code a Wordle clone. This project used HTML and CSS, but it was mostly created using JavaScript.
                     </p>
-                    <a href="WordleClone.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
-                </div>
-                <div class="project-container project-card">
-                    <img src="https://www.cdc.gov/nutrition/images/strategies-guidlines/nutrition-facts-600x300-1.jpg?_=65697" alt="research" loading="lazy" class="project-pic" />
-                    <h3 class="project-title">Nutrition Label</h3>
-                    <p class="project-details">
-                        I created a nutrition label using HTML and CSS!
-                    </p>
-                    <a href="NutritionLabel.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
+                    <a href="WordleClone.html" target="_blank" class="project-link"><strong>Play the Game!</strong></a>
                 </div>
                 <div class="project-container project-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/FreeCodeCamp_logo.png" alt="expense tracker" loading="lazy" class="project-pic" />
@@ -637,7 +720,15 @@
                     <p class="project-details">
                         As a part of freeCodeCamp's Responsive Web Design certification, I created a city skyline using HTML and CSS. By changing the size of the webpage window, you will see the city skyline go from nighttime to daytime and back!
                     </p>
-                    <a href="CitySkyline.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
+                    <a href="CitySkyline.html" target="_blank" class="project-link"><strong>Try it!</strong></a>
+                </div>
+                <div class="project-container project-card">
+                    <img src="https://p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-details.png" alt="html css javascript" loading="lazy" class="project-pic" />
+                    <h3 class="project-title">Use CSS and JS to Play with Variables</h3>
+                    <p class="project-details">
+                        Following Wes Bos's 30 Days of JavaScript course, I worked on connecting HTML, CSS, and JavaScript principles to create a responsive photo viewer. Users can modify spacing, blur, and base color as they please.
+                    </p>
+                    <a href="CSSandJS.html" target="_blank" class="project-link"><strong>Try it!</strong></a>
                 </div>
             </div>
             <div class="projects-container">
@@ -655,20 +746,20 @@
                     <p class="project-details">
                         This project allows users to "paint" right in the web browser. When users click and drag their mouse, they can draw a picture of their choice in rainbow color.
                     </p>
-                    <a href="DrawingCanvas.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
+                    <a href="DrawingCanvas.html" target="_blank" class="project-link"><strong>Try it!</strong></a>
                 </div>
                 <div class="project-container project-card">
-                    <img src="https://suncatcherstudio.com/uploads/patterns/us-maps/png-medium/usa-map-states-names-color.png" alt="USA" loading="lazy" class="project-pic" />
+                    <img src="https://www.501c3.org/wp-content/uploads/2017/06/us-map.jpg" alt="USA" loading="lazy" class="project-pic" />
                     <h3 class="project-title">City and State Search</h3>
                     <p class="project-details">
                         Using a public GitHub source with major US cities, states, and populations, I created a searchbar using HTML, CSS, and JavaScript. The code allows you to search for a particular city or state.
                     </p>
-                    <a href="CityStateSearch.html" target="_blank" class="project-link"><strong>Check it out!</strong></a>
+                    <a href="CityStateSearch.html" target="_blank" class="project-link"><strong>Try it!</strong></a>
                 </div>
             </div>
         </section>
         <!--Contact Section-->
-        <section class="contact" id="contact">
+        <!-- <section class="contact" id="contact">
             <h2>Let's Connect!</h2>
             <div class="contact-form-container">
                 <div class="contact-form">
@@ -690,7 +781,7 @@
                     </form>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--Social accounts (fixed to right side)-->
         <div class="socials">
             <a href="https://www.linkedin.com/in/savrina-salartash/" target="_blank">
@@ -701,7 +792,7 @@
         </div>
         <!--Scroll to top-->
         <i class="scroll-up" id="scroll-up">
-            <img src="https://thenounproject.com/api/private/icons/607573/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="socicon up-arrow" alt="scroll up" />
+            <img src="https://www.drupal.org/files/project-images/138547-200.png" class="socicon up-arrow" alt="scroll up" />
         </i>
         <script> //this section is attached to the HTML, gets the user's click to scroll to the top, and it does so smoothly
             const scrollUp = document.querySelector("#scroll-up");
